@@ -11,7 +11,7 @@ def grabRecent():
 
     filename = runCmd(findCmd)[:-1]
 
-    copyDest = "/home/pi/programs/"+filename
+    copyDest = "/home/pi/piShift/"+filename
 
     copyCmd = "cp /mnt/" + filename + " " + copyDest 
 

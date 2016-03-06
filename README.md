@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/tomhartley/piShift/master/images/logo.png" width="100">
+<img src="https://raw.githubusercontent.com/tomhartley/piShift/master/images/logo.png" width="350">
 
 piShift makes it super simple to get programming on your Pi Zero - just plug your Pi into your laptop with a micro-USB cable and it appears as a USB Drive. Drag across a .py file, and within seconds the Pi will automatically detect it's been added, and will start running the most recently edited file.
 

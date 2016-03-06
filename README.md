@@ -11,7 +11,9 @@ piShift makes it super simple to get programming on your Pi Zero - just plug you
 3. Put startmod.sh inside that folder
 4. Move the two .service files to the /etc/systemd/system
 5. Run the following two terminal commands:
-'''systemctl enable piShift.service
-systemctl enable startotg.service'''
+```
+systemctl enable piShift.service
+systemctl enable startotg.service
+```
 
-Hopefully in the future it should be easier to get this up and running!
+Hopefully in the future it should be easier to get this up and running! I am hoping to get an installation shell script up soon.

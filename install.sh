@@ -10,12 +10,12 @@ echo "dtoverlay=dwc2" | sudo tee -a /boot/config.txt
 echo "dwc2" | sudo tee -a /etc/modules
 echo "g_acm_ms" | sudo tee -a /etc/modules
 systemctl enable getty@ttyGS0.service
-idir = "/opt/pishift"
+idir="/opt/pishift"
 mkdir "$idir"
 mkdir "$idir/binaries"
 mkdir "$idir/programs"
 mkdir "$idir/scripts"
-binf = "$idir/binaries/ms.bin"
+binf="$idir/binaries/ms.bin"
 dd if=/dev/zero of="$binf" bs=512 count=2880
 mkdosfs "$binf"
 cp -a services/. /etc/systemd/system/

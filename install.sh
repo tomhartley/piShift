@@ -9,15 +9,17 @@ sudo BRANCH=next rpi-update
 echo "dtoverlay=dwc2" | sudo tee -a /boot/config.txt
 echo "dwc2" | sudo tee -a /etc/modules
 echo "g_acm_ms" | sudo tee -a /etc/modules
+systemctl enable getty@ttyGS0.service
 idir = "/opt/pishift"
 mkdir "$idir"
 mkdir "$idir/binaries"
-binf = "$idir/binaries/ms.bin"
+mkdir "$idir/programs"
 mkdir "$idir/scripts"
+binf = "$idir/binaries/ms.bin"
 dd if=/dev/zero of="$binf" bs=512 count=2880
 mkdosfs "$binf"
-cp -r scripts/ "$idir/scripts/"
-cp -r services/ /etc/systemd/system/
+cp -a services/. /etc/systemd/system/
+cp -a scripts/. "$idir/scripts/"
 for filename in services/*.service; do
     name=${filename##*/}
     systemctl enable $name

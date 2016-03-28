@@ -2,7 +2,7 @@
 import subprocess
 from time import sleep
 def grabRecent():
-    mountCommand = "sudo mount -o ro /piusb.bin /mnt"
+    mountCommand = "sudo mount -o ro /opt/pishift/binaries/ms.bin /mnt"
     unmountCommand = "sudo umount /mnt"
 
     findCmd = 'cd /mnt; ls -t | head -n1'
@@ -11,7 +11,7 @@ def grabRecent():
 
     filename = runCmd(findCmd)[:-1]
 
-    copyDest = "/home/pi/piShift/"+filename
+    copyDest = "/opt/pishift/programs/"+filename
 
     copyCmd = "cp /mnt/" + filename + " " + copyDest 
 
@@ -19,7 +19,7 @@ def grabRecent():
 
     runCmd(unmountCommand)
 
-    return filename
+    return copydest,filename
 
 def getMD5(fname):
     md5Command = "md5sum " + fname
@@ -34,8 +34,8 @@ def runCmd(cmd):
 lastHash = None
 proc = None
 while True:
-    newName = grabRecent()
-    newHash = getMD5(newName)
+    fullpath,newName = grabRecent()
+    newHash = getMD5(fullpath)
     if(proc):
         if (proc.poll()!=None):
             print ("=====YOUR PROGRAM DIED. TRY AGAIN?=====")
@@ -49,7 +49,7 @@ while True:
             proc.kill() #kill the old python file that was running, and start running the new process
             print ("======KILLED======")
         print ("======RUNNING NEW FILE: "+newName+"======")
-        proc = subprocess.Popen(["python",newName],stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
+        proc = subprocess.Popen(["python",fullpath],stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
         lastHash = newHash 
     else:
         #print ("======NO CHANGES FOUND======")

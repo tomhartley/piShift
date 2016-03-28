@@ -5,8 +5,8 @@ DefaultDependencies=false
 
 [Service]
 Type=simple
-ExecStart=/home/pi/programs/startmod.sh
-WorkingDirectory=/home/pi/programs/
+ExecStart=/opt/pishift/scripts/startmod.sh
+WorkingDirectory=/opt/pishift/
 
 [Install]
 WantedBy=local-fs.target

@@ -4,8 +4,8 @@ DefaultDependencies=false
 
 [Service]
 Type=simple
-ExecStart=/home/pi/piShift/pishift.py
-WorkingDirectory=/home/pi/piShift/
+ExecStart=/opt/pishift/scripts/pishift.py
+WorkingDirectory=/opt/pishift/
 TTYPath=/dev/ttyGS0
 
 [Install]

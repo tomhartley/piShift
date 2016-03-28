@@ -1,0 +1,12 @@
+[Unit]
+Description=Starts kernel modules for USB OTG
+After=systemd-remount-fs.service
+DefaultDependencies=false
+
+[Service]
+Type=simple
+ExecStart=/home/pi/programs/startmod.sh
+WorkingDirectory=/home/pi/programs/
+
+[Install]
+WantedBy=local-fs.target

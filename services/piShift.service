@@ -1,0 +1,12 @@
+[Unit]
+Description=Starts piShift
+DefaultDependencies=false
+
+[Service]
+Type=simple
+ExecStart=/home/pi/piShift/pishift.py
+WorkingDirectory=/home/pi/piShift/
+TTYPath=/dev/ttyGS0
+
+[Install]
+WantedBy=local-fs.target

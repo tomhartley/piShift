@@ -19,7 +19,7 @@ def grabRecent():
 
     runCmd(unmountCommand)
 
-    return copydest,filename
+    return copyDest,filename
 
 def getMD5(fname):
     md5Command = "md5sum " + fname

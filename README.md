@@ -7,7 +7,7 @@ piShift makes it super simple to get programming on your Pi Zero - just plug you
 2. Get internet on your Pi - you can do this with a USB hub + WiFi dongle on the PiZero, or by temporarily putting your SD card into a B+/2/3 .
 3. Run the following commands: 
 ```
-git clone git clone github.com/tomhartley/piS… --branch rewrite
+git clone git clone https://github.com/tomhartley/piShift.git --branch rewrite
 cd piShift
 sudo ./install.sh
 ```

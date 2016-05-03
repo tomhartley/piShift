@@ -4,8 +4,9 @@ piShift makes it super simple to get programming on your Pi Zero - just plug you
 
 #Installation
 1. Install Raspbian (full, not lite) onto an SD card
-2. Get internet on your Pi - you can do this with a USB hub + WiFi dongle on the PiZero, or by temporarily putting your SD card into a B+/2/3 .
-3. Run the following commands: 
+2. Expand your SD card!
+3. Get internet on your Pi - you can do this with a USB hub + WiFi dongle on the PiZero, or by temporarily putting your SD card into a B+/2/3 .
+4. Run the following commands: 
 ```
 git clone https://github.com/tomhartley/piShift.git --branch rewrite
 cd piShift

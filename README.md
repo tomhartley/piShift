@@ -14,3 +14,7 @@ sudo ./install.sh
 ```
 
 Now attach a micro-USB cable to the USB port marked "USB" on the PiZero, plug into your computer, and you should be good to go!
+
+#FAQ
+- Q: Does it work with other versions of the Pi as well as the Pi Zero?
+- A: Sadly, no. The other Pis have a USB hub in the way (with the exception of the A/A+, which we're working on) - and this cannot work.

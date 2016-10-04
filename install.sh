@@ -16,6 +16,7 @@ else
    mkdir "$idir/binaries"
    mkdir "$idir/programs"
    mkdir "$idir/scripts"
+   touch "$idir/programs/test.txt"
    binf="$idir/binaries/ms.bin"
    dd if=/dev/zero of="$binf" bs=512 count=2880
    mkdosfs "$binf"

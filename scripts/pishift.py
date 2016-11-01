@@ -7,7 +7,7 @@ def grabRecent():
     #unmountCommand = "sudo umount /mnt"
     unmountCommand = ["sudo", "umount", "/mnt"]
 
-    findCmd = 'cd /mnt; ls -t | head -n1'
+    findCmd = 'cd /mnt; ls -tp | grep -v '/$' | head -n1'
 
     runCmd(mountCommand)
 
